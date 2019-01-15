@@ -1,0 +1,101 @@
+.my-container {
+    display: flex;
+    
+    min-width: 300px;
+    
+  flex-direction: column;
+  height:100%;
+  
+  }
+  .navwidth{
+    width:200px;
+  }
+  /* .my-header {
+    min-height: 1px;
+    padding: 8px 24px 0;
+    width: 30%;
+  } */
+  .filterInput{
+
+
+    min-height: 1px;
+    padding: 8px 24px 8px 24px;
+    width:30%
+  }
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: auto;
+  }
+  
+  .mobile-label {
+    display: none;
+  }
+  @media(max-width: 600px) {
+    .mobile-label {
+      width: 80px;
+      display: inline-block;
+          font-weight: bold;
+          padding-top: 10px;
+          padding-bottom: 10px;
+    }
+    .navwidth{
+      width:150px;
+    }
+    .mat-header-row {
+        display: none;
+        min-height: auto !important;
+      }
+    
+      .mat-row { 
+        flex-direction: column;
+        align-items: start;
+        padding: 8px 24px;
+        min-height: auto !important;
+      }
+      .filterInput{
+
+
+        min-height: 1px;
+        padding: 8px 8px 8px 24px;
+        width:100%
+      }
+    }
+
+
+    .my-is-mobile .my-toolbar {
+      position: fixed;
+      /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+      z-index: 2;
+    }
+
+    h1.my-app-name {
+      margin-left: 8px;
+    }
+
+    .my-sidenav-container {
+      /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+         causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+      flex: 1;
+      height: 100%;
+    }
+    .my-is-mobile .my-sidenav-container {
+      /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+         `<body>` to be our scrolling element for mobile layouts. */
+      flex: 1 0 auto;
+      height: 100%;
+    }
+        
+    .moveRight{
+
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .spacer{
+      flex:1 1 auto;
+    }
