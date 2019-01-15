@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import 'variables';
+@import "~@angular-mdl/core/scss/color-definitions";
+ 
+$color-primary: $palette-blue-500;
+$color-primary-dark: $palette-blue-700;
+$color-accent: $palette-amber-A200;
+$color-primary-contrast: $color-dark-contrast;
+$color-accent-contrast: $color-dark-contrast;
+ 
+@import '~@angular-mdl/core/scss/material-design-lite';
+@import '~@angular-mdl/select/select';
+
+@import '~@angular-mdl/popover/popover';
+
+.newFont{
+
+color: $myFontColor ;
+/* background-color: $myBackGroundColor ; */
+
+}
+
+.myBackground{
+
+
+   // width: 100%;
+   // height: 100%;
+    animation:bingo 10s infinite;
+}
+
+@keyframes bingo{
+
+    0%{
+        background-color: $firstcolor;
+    }
+    100%{
+
+        background-color: $lastcolor;
+    }
+
+}

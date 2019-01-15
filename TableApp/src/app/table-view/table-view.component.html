@@ -1,0 +1,105 @@
+
+
+<button mdl-button mdl-button-type="raised" mdl-colored="accent" mdl-ripple (click)="test()">OpenME</button>
+<button id="demo-menu-lower-left"
+        class="mdl-button mdl-js-button mdl-button--icon">
+  <i class="material-icons">more_vert</i>
+</button>
+<!--mdl-dialog #dialog>
+    <h3 class="mdl-dialog__title">Edit User</h3>
+    <div class="mdl-dialog__content">
+       <mdl-textfield type="text" label="Username"  floating-label autofocus></mdl-textfield> 
+    </div>
+    <div class="mdl-dialog__actions">
+      <button mdl-button (click)="dialog.close()" mdl-button-type="raised" mdl-colored="primary" mdl-ripple>Save</button>
+      <button mdl-button (click)="dialog.close()" mdl-button-type="raised" mdl-ripple>Cancel</button>
+    </div>
+  </mdl-dialog>-->
+
+<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+    for="demo-menu-lower-left">
+  <li class="mdl-menu__item">Some Action</li>
+  <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>
+  <li disabled class="mdl-menu__item">Disabled Action</li>
+  <li class="mdl-menu__item">Yet Another Action</li>
+</ul>
+
+<!-- Right aligned menu below button -->
+<!-- <button id="demo-menu-lower-right"
+        class="mdl-button mdl-js-button mdl-button--icon">
+  <i class="material-icons">more_vert</i>
+</button>
+
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+    for="demo-menu-lower-right">
+  <li class="mdl-menu__item">Some Action</li>
+  <li class="mdl-menu__item">Another Action</li>
+  <li disabled class="mdl-menu__item">Disabled Action</li>
+  <li class="mdl-menu__item">Yet Another Action</li>
+</ul> -->
+
+
+
+
+
+      <div  class="filterInput">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
+      </div>
+      
+      <div class="example-container mat-elevation-z2">
+      
+        <mat-table [dataSource]="dataSource" matSort [class.isMobile]="isMobile">
+      
+          <!-- ID Column -->
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+            <mat-cell *matCellDef="let row">  <span class="mobile-label">Position:</span>{{row.title1}} </mat-cell>
+          </ng-container>
+      
+          <!-- Progress Column -->
+          <ng-container matColumnDef="progress">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Progress </mat-header-cell>
+            <mat-cell *matCellDef="let row">  <span class="mobile-label">Name:</span>{{row.title2}}% </mat-cell>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let row"><span class="mobile-label">Weight:</span> {{row.title3}} </mat-cell>
+          </ng-container>
+      
+          <!-- Color Column -->
+          <ng-container matColumnDef="color">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Color </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color">  <span class="mobile-label">Symbol:</span>{{row.title4}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Actions </mat-header-cell>
+              <mat-cell *matCellDef="let row" [style.color]="row.color" >   <span class="mobile-label">Symbol:</span>
+              
+                <button  title="Edit" mat-icon-button  (click)="passingRow(row)" ><i class="material-icons">face</i></button>
+                <button  title="View" mat-icon-button (click)="passingRow(row)"><i class="material-icons">delete_forever</i></button>
+              
+              
+              </mat-cell>
+            </ng-container>
+      
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;">
+          </mat-row>
+        </mat-table>
+      
+        <mat-paginator class="mat-elevation-z2" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        <input class="mdl-slider mdl-js-slider" type="range"
+min="0" max="100" value="25" tabindex="0">
+      </div>
+
+     <!--  <mdl-select floating-label  label="Country">
+          <mdl-option  >COUNTRY1</mdl-option>
+          <mdl-option  >COUNTRY2</mdl-option>
+          <mdl-option  >COUNTRY3</mdl-option>
+          <mdl-option  >COUNTRY4</mdl-option>
+        </mdl-select> -->

@@ -1,0 +1,36 @@
+
+
+<!-- <mat-card>Simple card
+
+
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+
+</mat-card> -->
+
+<!-- <div style="display:flex;"> -->
+<agm-map [latitude]="lat" [longitude]="lng"[mapTypeControl]="true" (mapReady)="mapReady($event)">
+    <div id="Settings" style="border-style:solid;border-width:5px;">
+      
+      
+     
+    
+     
+      <mat-card style="margin:75px 75px 75px 75px;">Simple card
+
+
+          <mat-form-field>
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+            </mat-form-field>
+      
+
+      </mat-card>
+    
+    
+    
+    
+    </div>
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+<!-- </div> -->
