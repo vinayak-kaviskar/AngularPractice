@@ -1,0 +1,70 @@
+
+
+<div class="container">
+  
+    <div class="row">
+        <div class="col-md-5">
+    
+      <form  [formGroup]="signupForm"  (ngSubmit)="OnSubmit()">
+      <div class="form-group">
+ 
+        
+          <label for="firstname" >First Name</label>
+          <input id = "firstname" type="text" class="form-control"  formControlName="firstname"/>
+      
+          <span *ngIf="!signupForm.get('firstname').valid && signupForm.get('firstname').touched" class="help-block">
+      
+            please enter a valid name
+      
+          </span>
+      
+ 
+          <label for="lastname">Last Name</label>
+          <input id = "lastname" type="text" class="form-control"  formControlName="lastname"/>
+      
+          <span *ngIf="!signupForm.get('lastname').valid && signupForm.get('lastname').touched" class="help-block">
+      
+            please enter a valid name
+      
+          </span>
+
+          
+          <label for="phoneNumber" >Phone Number</label>
+          <input id = "phoneNumber" type="text" class="form-control"  formControlName="phoneNumber" max-length="12"/>
+      
+          <span *ngIf="!signupForm.get('phoneNumber').valid && signupForm.get('phoneNumber').touched" class="help-block">
+      
+            please enter a phone number
+      
+          </span>
+     
+
+
+
+    
+        <label for="email" >Email Id</label>
+        <input id = "email" type="text" class="form-control"  formControlName="email"/>
+    
+        <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched" class="help-block">
+    
+          please enter a valid email Id
+    
+        </span>
+    
+        <label for="password" >Password</label>
+        <input id = "password" type="password" class="form-control" fromControlName="password"/>
+    
+        <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched" class="help-block">
+    
+            please enter a valid password
+      
+          </span>
+      </div>
+    
+      <button class="btn btn-primary" type="submit" [disabled]="!signupForm.valid">SIGNUP</button>
+    </form>
+    </div>
+    </div>
+    </div>
+    
+    

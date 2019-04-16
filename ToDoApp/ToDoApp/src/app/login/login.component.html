@@ -1,0 +1,37 @@
+
+
+<div class="container">
+  
+<div class="row">
+    <div class="col-md-5">
+
+  <form  [formGroup]="loginForm"  (ngSubmit)="OnSubmit()">
+  <div class="form-group">
+
+    <label for="email" >Email Id</label>
+    <input id = "email" type="text" class="form-control"  formControlName="email"/>
+
+    <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched" class="help-block">
+
+      please enter a valid email Id
+
+    </span>
+  <br>
+  <br>
+    <label for="password" >Password</label>
+    <input id = "password" type="password" class="form-control" formControlName="password"/>
+
+    <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched" class="help-block">
+
+        please enter a valid email Id
+  
+      </span>
+  </div>
+
+  <button class="btn btn-primary" [disabled]="!loginForm.valid" type="submit" >LOGIN</button>
+  <a class= "float-right"routerLink="/signup"><button class="btn btn-info" type="button" >SIGN UP</button></a>
+</form>
+</div>
+</div>
+</div>
+

@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div style="margin-top: 10%;">
+        <h1 class="h3  font-weight-normal">To Do List</h1>
+
+        <form   [formGroup]="taskForm" class="form-inline"  (ngSubmit)="addTask()">
+          <input class="form-control " style="width:70%;" formControlName="taskName">
+          <input (input)="test()" placeholder="Date Time" class="form-control " style="width:18%; margin-left:2%"
+            formControlName="taskDate" [owlDateTimeTrigger]="dt" [owlDateTime]="dt">
+          <owl-date-time #dt></owl-date-time>
+
+          <button style="margin-left:2%" type="submit" [disabled]="!taskForm.valid" class="btn btn-info"> ADD</button>
+        </form>
+
+        <table style="margin-top:10%;width: -webkit-fill-available;">
+
+          <tbody>
+            <tr *ngFor="let task of tasksList">
+
+              <td> <span [ngClass]="{checked:task.isCompleted}">   {{task.taskName}} </span></td>
+              
+              <td ><img (click)="updateTask(task)" [ngClass]="{hide:task.isCompleted}" style="height:85%;width:17%;" src="https://img.icons8.com/doodle/26/000000/checkmark.png"></td>
+              <td><img (click)="deleteTask(task)" style="height:44%;width:9%;" src="https://img.icons8.com/color/48/000000/delete-sign.png"></td>
+              
+            </tr>
+          </tbody>
+
+        </table>
+
+
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
