@@ -1,0 +1,55 @@
+<p>
+  <span>String interpolation example. Anything that returns a string can be used in String Interpolation Operator</span>
+  <br>
+  Server with ID : {{serverId}} is {{getServerStatus()}}
+</p>
+
+
+
+<p>Example of property binding where we have binded the "disabled" property of html to an angular variable by placing into square brackets.</p>
+<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+
+
+<hr>
+<p>Example of property binding  and string interpolation for "innerText" property of P-tag</p>
+
+<p>{{allowNewServer}}</p>
+<p  [innerText]="allowNewServer"></p>
+
+
+<hr>
+
+<p>Example on Event Binding :passing and  using data on Event Binding</p>
+
+<button class="btn btn-success"   (click)="onButtonClick()">Add Server2</button>
+<br>
+<input (input)="onUpdateChange($event)" class="form-control">
+<br>
+{{serverName}}
+
+
+<hr>
+<strong>Two-Way Data Binding using ngModel</strong>
+<p>Two data binding is combination of property binding and event binding 
+  hence we use square brackets and curly brackets within square brackets while using ngModel !</p>
+<input [(ngModel)]="serverName2" class="form-control">
+{{serverName2}}
+
+
+<hr>
+<strong>Directives in angular</strong>
+<p>We can create our own directives</p>
+<br>
+<p> *ngIf is one example of predefined directive in angular</p>
+<p>The star * before ngif directive is to indicate that this directive is giving an instruction to the DOM to wether </p>
+<p>"*ngIf is an example of :<strong>Structual Directive</strong> which adds or removes an element."</p>
+<p> We also have another type of directive known as <strong>Attribute Directive</strong></p>
+
+
+<p>ngStyle is an example of <strong>Attribute Directive</strong>></p>
+
+<p>Below is an exapmle of Attribute directive:ngStyle and ngClass with property binding</p>
+<p>For ngClass property we are assigning a javascript object with key value pairs and <br>
+   key represents the name of css class and value represents boolean variable to decide whether to apply the class or not</p>
+
+<p [ngClass]="{ online : serverStatusString === 'online'}" [ngStyle] = "{ backgroundColor : getColor() }">server is {{getServerStatusString()}}</p>

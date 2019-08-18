@@ -1,0 +1,50 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <br><br>
+            <strong>Pipe Practice</strong>
+            <app-pipe-practice></app-pipe-practice>
+            <button class = "btn btn-primary" (click)="toggleBasics()">Toggle Basics Component</button>
+
+            <hr>
+            <button class = "btn btn-primary" (click)="toggleDataBindingContent()">Toggle DataBindingContent Component</button>
+
+            <hr>
+
+            <hr>
+            <button class = "btn btn-primary" (click)="toggleFormsTemplateDriven()">Toggle Template Driven Form Component</button>
+
+            <hr>
+            <hr>
+            <button class = "btn btn-primary" (click)="toggleReactiveFormDriven()">Toggle Reactive  Form Component</button>
+
+            <hr>
+           
+            <div *ngIf = "showBasicsFlag"> 
+                <input class = "form-control" [(ngModel)] = "serverName" >
+                <button class = "btn btn-success" (click)="addServer()">Add Server</button>
+                <app-server  *ngFor="let server of servers">
+
+                </app-server>
+            </div>
+            <app-servers  *ngIf = "showBasicsFlag">
+
+            </app-servers>
+
+
+            <app-data-binding-deep-dive *ngIf = "showDataBindingContentFlag"></app-data-binding-deep-dive>
+
+         
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<app-template-driven-form *ngIf = "showTemplateDrivenFormComponent"></app-template-driven-form>
+
+
+<app-reactive-approach-form *ngIf="showReactiveFormComponent"></app-reactive-approach-form>

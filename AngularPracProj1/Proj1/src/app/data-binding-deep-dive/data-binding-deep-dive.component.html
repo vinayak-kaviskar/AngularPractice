@@ -1,0 +1,22 @@
+<div class="container">
+ <app-add-new-server (serverCreated)="onAddServer($event)"
+   (blueprintCreated)="onAddBlueprint($event)">
+</app-add-new-server>
+  <hr>
+ <app-server-element [element]="server"  *ngFor="let server of serverElements"></app-server-element>
+</div>
+<hr>
+<div>
+  <b> View Encapsulation :</b>
+    <br>
+    Angular has View Encapsulation which applys css to only that component in which it is written.
+    Angular gives random  attribute names to each component and its elements to replicate shadow dom technology.
+    But we can override this by setting the <b>Encapsulation</b> propeerty in metadata of the component to 
+      <b>encapsulation: ViewEncapsulation.None</b>. So now the css will get applied globally.
+      By default it is as  <b>encapsulation: ViewEncapsulation.Emulated</b>.
+
+
+      We can also set the encapsulation property to <b>encapsulation: ViewEncapsulation.Native</b> which behaves 
+      like Emulated but only on those browsers which support shadow dom technology.
+
+</div>

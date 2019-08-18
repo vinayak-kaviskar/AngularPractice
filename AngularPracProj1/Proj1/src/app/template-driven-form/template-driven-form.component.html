@@ -1,0 +1,94 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+     <!-- one way of accessing form is by passing the form in the submitForm function as commented below -->
+    <!--   <form (ngSubmit)="submitForm(myLocalReference)" #myLocalReference="ngForm"> -->
+      <!-- Below way of accessing form using @viewchild method helps if we want to acces the form even before submitting -->
+        <form (ngSubmit)="submitForm()" #myLocalReference="ngForm">
+        <div id="user-data"
+        ngModelGroup="userdata"
+        #myuserdata="ngModelGroup">
+
+          <div class="form-group">
+
+            <label for="username">Username</label>
+            <input 
+            type="text" 
+            id="username" 
+            class="form-control"
+            ngModel
+            name="username"
+            required
+            #referusername="ngModel"
+            
+            >
+            <span class="help-block"  *ngIf="!referusername.valid  && referusername.touched">Please enter a valid username</span>
+          </div>
+          <!-- keep below button type as button to prevent from submitting the form -->
+          <button class="btn btn-danger" type="button"(click)="suggestUserName()">Suggest an Username</button>
+          <div class="form-group">
+            <label for="emailaddress">Email Address</label>
+            <input 
+            type="email" 
+            id="emailaddress" 
+            class="form-control"
+            ngModel
+            name="email"
+            required
+            email
+            #referemail="ngModel"
+            >
+            <span class="help-block" *ngIf="!referemail.valid && referemail.touched">Please enter a valid email address</span>
+          </div>
+
+        </div>
+        <span class="help-block" *ngIf="!myuserdata.valid && myuserdata.touched">Please Enter valid user data!</span>
+
+        <div class="form-group">
+          <label id="secret">Secret Questions</label>
+          <select 
+          id="secret" 
+          class="form-control"
+          ngModel
+          name="secret"
+          required
+          >
+            <option value="pet">Your first pet</option>
+            <option value="teacher">Your first teacher</option>
+          </select>
+
+        </div>
+
+
+        <div class="radio" *ngFor="let gender of genders">
+          
+        <label>
+          <input type="radio" name="gender" ngModel [value]="gender" required>
+          {{gender}}
+
+        </label>
+        
+        </div>
+
+
+
+        <button class="btn btn-primary" type="submit" [disabled]="!myLocalReference.valid">Submit</button>
+      </form>
+
+    </div>
+    
+  </div>
+  <div class="row" *ngIf="formSubmitted">
+      <div class="col-xs-12">
+        <h3>User Data</h3>
+        <p>Username:{{user.username}}</p>
+        <p>Mail:{{user.email}}</p>
+        <p>Secret Question {{user.secretQuestion}}</p>
+        <p>Gender:{{user.gender}}</p>
+        <button type="button" (click)="resetForm()">Reset form</button>
+      </div>
+    </div>
+
+</div>
